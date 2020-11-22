@@ -1,0 +1,94 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: thhead"> </head>
+
+
+<body>
+<span th:replace = "layout :: navbar">	</span>
+
+ 	
+	<div class="container">
+		 <h4>Current projects</h4>
+		 
+		 <div>
+		 <table class="table table-bordered table-striped">
+		 <thead class="thead-dark">
+		 <tr> 
+		 <th> Project Name </th>
+		 <th> Project Stage </th>
+		 </tr>
+		 </thead>
+		 <tbody>
+		 <tr th:each="aProject : ${list}">
+		 <td th:text="${aProject.name}"> </td>
+		 <td th:text="${aProject.stage}"> </td>
+		 </tr>
+		 
+		 
+		 </tbody>
+		 
+		 
+		 </table>
+		 
+		  <h4>Current Employees</h4>
+		 
+		 <table class="table table-bordered table-striped">
+		 <thead class="thead-dark">
+		 <tr> 
+		 <th> Employee First name </th>
+		 <th> Employee Last name </th>
+		 <th> Project count</th>
+		 
+		 </tr>
+		 </thead>
+		 <tbody>
+		 <tr th:each="aProject : ${listEmpProjectsCount}">
+		 <td th:text="${aProject.firstName}"> </td>
+		 <td th:text="${aProject.lastName}"> </td>
+		 <td th:text="${aProject.projectCount}"> </td> 
+		 </tr>
+		 
+		 
+		 </tbody>
+		 
+		 
+		 </table>
+		 
+		 </div>
+	
+
+<div class="col-md-4">hello
+ <canvas id="MyPieChart" height="150" width="150">
+
+</canvas>
+
+<script>
+var chartData	="[[${convertedJson}]]"
+
+</script>
+
+</div>
+</div>
+<script type="text/javascript" th:src="@{js/myJs.js}"></script>	
+<!-- <script>
+
+new Chart(document.getElementById("MyPieChart"), {
+    type: 'pie',
+    // The data for our dataset
+    data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+            label: 'My First dataset',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [0, 10, 5, 2, 20, 30, 45]
+        }]
+    },
+
+    // Configuration options go here
+    options: {}	
+});
+</script> -->
+</body>
+
+</html>
+ 

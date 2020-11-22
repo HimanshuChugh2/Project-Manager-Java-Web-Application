@@ -1,0 +1,43 @@
+<html xmlns:th="http://www.thymeleaf.org">
+ <span th:replace="layout :: thhead"></span>
+
+
+<body>
+<span th:replace = "layout :: navbar">	</span>
+
+<form>
+
+<table class="table table-bordered table-stripped">
+		 <thead class="thead-dark">
+<tr>
+<th> First Name  </th>
+<th> Second Name </th>
+<th> Email</th>
+
+</tr>
+</thead>
+<tbody>
+<tr th:each="empObject : ${empObj}">
+
+<td th:text="${empObject.firstName}"></td>
+
+<td th:text="${empObject.lastName}"></td>
+
+<td th:text="${empObject.email}"></td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+
+</form>
+
+
+
+
+
+
+</body>
+</html>

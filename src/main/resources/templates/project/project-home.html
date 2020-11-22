@@ -1,0 +1,31 @@
+<html xmlns:th="http://www.thymeleaf.org">
+ <span th:replace="layout :: thhead"></span>
+
+
+<body>
+<span th:replace = "layout :: navbar">	</span>
+
+<form>
+
+ <table class="table table-bordered table-stripped">
+		 <thead class="thead-dark">
+		 <tr> 
+		 <th> Project Name </th>
+		 <th> Project Stage </th>
+		 </tr>
+		 </thead>
+		 <tbody>
+		 <tr th:each="proObj : ${proObj}">
+		 <td th:text="${proObj.name}"> </td>
+		 <td th:text="${proObj.stage}"> </td>
+		 </tr>
+		 
+		 
+		 </tbody>
+		 
+		 
+		 </table>
+		 
+
+
+</form>
